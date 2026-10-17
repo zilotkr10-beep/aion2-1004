@@ -624,7 +624,7 @@ tr.edrow td { padding: 0; background: var(--panel); }
     var cur = ''; try { cur = localStorage.getItem(REMOTE_KEY) || ''; } catch (e) {}
     openModal('설정', '<label class="field">진행 순서 (파티 번호를 쉼표로 구분)<textarea id="m_seq" placeholder="1, 2, 3, 4, 10, 5">' + esc(custom ? seq : '') + '</textarea></label>' +
       '<p class="hint">비워 두면 모든 칸이 채워진 파티를 번호순으로 자동 정렬합니다. 순서에 없는 파티는 진행 순서와 다음 파티에 나오지 않습니다.</p>' +
-      '<label class="field">공유 저장소 주소 (Firebase Realtime Database)<input id="m_remote" placeholder="https://aion2--1004-traker-default-rtdb.firebaseio.com" value="' + esc(cur) + '"></label>' +
+      '<label class="field">공유 저장소 주소 (Firebase Realtime Database)<input id="m_remote" value="https://aion2--1004-traker-default-rtdb.firebaseio.com"></label>' +
       '<p class="hint">비워 두면 이 기기의 브라우저에만 저장됩니다. 주소를 넣으면 같은 주소를 쓰는 모든 사람이 같은 표를 봅니다. 주소를 바꾸면 페이지가 새로고침됩니다.</p>', '저장', function (f) {
       var url = f.querySelector('#m_remote').value.trim();
       if (url && !/^https:\/\/[^\s]+$/.test(url)) return '공유 저장소 주소는 https:// 로 시작해야 합니다.';
